@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sentra.local/schemas/concept-generator-result-v1.json",
+  "title": "Sentra Concept Generator Result v1",
+  "type": "object",
+  "required": [
+    "schema_version", "request_id", "request_sha256", "generated_at",
+    "result_type", "contract_status", "reason", "provider", "prompt",
+    "worker_claim", "contract", "counters", "staging"
+  ],
+  "properties": {
+    "schema_version": { "const": "sentra-concept-generator-result-v1" },
+    "request_id": { "type": "string", "minLength": 1 },
+    "request_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "result_type": { "enum": ["CONCEPTS_STAGED", "VALID_ZERO", "NO_APPROVABLE_CONCEPT", "OPERATIONAL_FAILURE"] },
+    "contract_status": { "type": "string" },
+    "reason": { "type": "string" },
+    "provider": { "type": "object" },
+    "prompt": { "type": "object" },
+    "worker_claim": { "type": "object" },
+    "contract": { "type": "object" },
+    "counters": { "type": "object" },
+    "staging": { "type": ["object", "null"] }
+  }
+}

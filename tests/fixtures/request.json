@@ -1,0 +1,73 @@
+{
+  "schema_version": "sentra-concept-generator-request-v1",
+  "request_id": "fixture-request-001",
+  "generated_at": "2026-08-15T12:00:00.000Z",
+  "max_concepts": 4,
+  "staging_cap": 4,
+  "transmitted_sources": [
+    {
+      "record": {
+        "schema_version": "evidence-record-v1",
+        "recorded_at": "2026-08-15T11:00:00.000Z",
+        "source_id": "fixture-academic-duration-001",
+        "source_title": "Synthetic Duration Benchmark Rebalancing Study",
+        "source_class": "academic",
+        "track": "rates",
+        "topic": "benchmark rebalancing",
+        "canonical_url": null,
+        "source_path": "fixture://duration-rebalancing",
+        "source_file_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "normalized_content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_schema": "fixture-source-v1",
+        "content_selector": "fixture passage",
+        "content_tier": "FULL_TEXT",
+        "extractor_version": "fixture-extractor-v1",
+        "extraction_attempt": 1,
+        "extraction_status": "READY",
+        "extraction_reason": "fixture",
+        "retryable": false,
+        "manifest_version_key": "fixture-v1",
+        "packets": [
+          {
+            "packet_id": "packet-duration-001",
+            "evidence_tier": "FULL_TEXT",
+            "claim_scope": "SOURCE_PASSAGE",
+            "passage": "Regulated funds that target fixed duration may trade Treasury futures near scheduled index rebalancing dates when benchmark constituent weights change.",
+            "passage_sha256": "47fed807cdb4ed3273b2d24fa30d6bee617d6f2a562eced68eb62c1b5c7df03d",
+            "start_offset": 0,
+            "end_offset": 151,
+            "locator_type": "SECTION_PARAGRAPH",
+            "locator_value": "Results¶1",
+            "source_file_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "normalized_content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "extraction_method": "fixture"
+          }
+        ]
+      },
+      "packets": [
+        {
+          "packet_id": "packet-duration-001",
+          "evidence_tier": "FULL_TEXT",
+          "claim_scope": "SOURCE_PASSAGE",
+          "passage": "Regulated funds that target fixed duration may trade Treasury futures near scheduled index rebalancing dates when benchmark constituent weights change.",
+          "passage_sha256": "47fed807cdb4ed3273b2d24fa30d6bee617d6f2a562eced68eb62c1b5c7df03d",
+          "start_offset": 0,
+          "end_offset": 151,
+          "locator_type": "SECTION_PARAGRAPH",
+          "locator_value": "Results¶1",
+          "source_file_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "normalized_content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "extraction_method": "fixture"
+        }
+      ]
+    }
+  ],
+  "rotation": [
+    {
+      "id": "entry-unrelated-weather-volatility",
+      "concept": "A deliberately unrelated fixture concept",
+      "source_class": "official"
+    }
+  ],
+  "lessons": []
+}

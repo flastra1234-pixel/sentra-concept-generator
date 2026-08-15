@@ -1,0 +1,21 @@
+{
+  "name": "sentra-concept-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone, evidence-grounded Sentra Concept Generator",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "sentra-concept-generator": "./src/cli.ts"
+  },
+  "scripts": {
+    "start": "node src/cli.ts generate",
+    "doctor": "node src/cli.ts doctor",
+    "test": "node --test",
+    "smoke": "node src/cli.ts generate --provider fixture --input tests/fixtures/request.json --response-file tests/fixtures/model-response.json",
+    "check": "npm test && npm run doctor"
+  }
+}

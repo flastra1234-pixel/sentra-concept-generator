@@ -1,0 +1,56 @@
+{
+  "schema_version": "mechanism-invention-output-v1",
+  "concepts": [
+    {
+      "id": "entry-duration-benchmark-weight-transition",
+      "slot": "entry",
+      "family": "benchmark-constituent-flow",
+      "concept": "On scheduled Treasury index rebalancing dates, condition a daily ZN entry on a benchmark weight transition and test the next-session return.",
+      "economic_counterparty": "Regulated duration-targeting funds must adjust Treasury futures exposure when their benchmark constituent weights change.",
+      "persistence_reason": "The demand is tied to an externally scheduled benchmark maintenance obligation and balance-sheet implementation timing.",
+      "cheapest_falsifier": "Compare next-session ZN returns after scheduled benchmark weight transitions with unconditional next-session returns.",
+      "transmission_channel": "Benchmark weight changes alter the futures quantity required to keep regulated portfolios near their mandated duration target.",
+      "source_class": "academic",
+      "falsifier_spec": {
+        "dataset": { "instruments": ["zn"], "surface": "daily" },
+        "signal": { "kind": "trailing_return", "params": {} },
+        "condition": { "kind": "calendar" },
+        "response": { "kind": "forward_return", "params": {} },
+        "statistic": "mean_diff_vs_unconditional",
+        "pooling": { "mode": "single", "series": ["zn"] },
+        "bar": {
+          "direction": "positive",
+          "t_min": 2,
+          "min_effect": 0,
+          "effect_unit": "bp",
+          "lb_rule": "gt0"
+        },
+        "min_n": 100,
+        "orthogonalisation": {
+          "controls": ["overnight_trailing_return"],
+          "kill_t_min": 1.5
+        }
+      },
+      "evidence_refs": [
+        {
+          "evidence_ref_id": "ref-1",
+          "source_id": "fixture-academic-duration-001",
+          "packet_id": "packet-duration-001",
+          "evidence_tier": "FULL_TEXT",
+          "claim_scope": "SOURCE_PASSAGE",
+          "locator_type": "SECTION_PARAGRAPH",
+          "locator_value": "Results¶1",
+          "passage_echo": "Regulated funds that target fixed duration may trade Treasury futures near scheduled index rebalancing dates when benchmark constituent weights change."
+        }
+      ],
+      "mechanism_atoms": [
+        {
+          "atom_type": "FORCED_PARTICIPANT",
+          "claim": "Duration-targeting funds face scheduled benchmark-linked trading demand.",
+          "evidence_ref_ids": ["ref-1"]
+        }
+      ]
+    }
+  ],
+  "no_concept_reason": null
+}
